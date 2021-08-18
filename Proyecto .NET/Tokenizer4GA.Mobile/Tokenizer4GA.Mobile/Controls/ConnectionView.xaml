@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tokenizer4GA.Mobile.Controls.ConnectionView"
+             BackgroundColor="OrangeRed"
+             xmlns:localization="clr-namespace:Tokenizer4GA.Shared.Localization;assembly=Tokenizer4GA.Shared">
+    <Label Text="{x:Static localization:LocalizedStrings.MessageNotInternet}"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="20"
+           FontAttributes="Bold"/>
+</StackLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.grupoandrade.tokenizer4ga</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>10.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Tokenizer4GA</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>Grupo Andrade Automotriz Tokenizer</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>es</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Se requiere acceso a la ubicación para el servicio de valet parking.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Se requiere acceso al calendario para registrar tus citas de servicio.</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>whatsapp</string>
+		<string>comgooglemaps</string>
+		<string>waze</string>
+		<string>fb</string>
+		<string>twitter</string>
+		<string>instagram</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps-x-callback</string>
+		<string>comgooglemapsurl</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>CFBundleIdentifier</key>
+	<string>com.grupoandrade.tokenizer4ga</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Las imágenes obtenidas con la cámara y desde la biblioteca, se utilizarán única y exclusivamente para enriquecer el expediente electrónico de sus autos y documentos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Las imágenes obtenidas con la cámara y desde la biblioteca, se utilizarán única y exclusivamente para enriquecer el expediente electrónico de sus autos y documentos.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Las imágenes obtenidas con la cámara y desde la biblioteca, se utilizarán única y exclusivamente para enriquecer el expediente electrónico de sus autos y documentos.</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.0</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Se requiere acceso a la ubicación para el servicio de valet parking.</string>
+	<key>CFBundleVersion</key>
+	<string>3</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    x:Class="Tokenizer4GA.Mobile.Controls.CustomEntry"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:Tokenizer4GA.Mobile.Behaviors"
+    xmlns:cc="clr-namespace:Tokenizer4GA.Mobile.Controls"
+    x:Name="this"
+    Padding="0,13">
+    <StackLayout>
+        <Label
+            x:Name="TitleLbl"
+            Margin="16,0"
+            Text="{Binding Title, Source={x:Reference this}, Mode=TwoWay}"
+            TextColor="{Binding TextColor, Source={x:Reference this}}" />
+        <StackLayout Margin="0,8,0,0" Orientation="Horizontal">
+            <cc:EntryWithoutUnderline
+                x:Name="TextEty"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding IsEnabledEntry, Source={x:Reference this}}"
+                IsPassword="{Binding IsPassword, Source={x:Reference this}}"
+                IsReadOnly="{Binding IsReadOnly, Source={x:Reference this}}"
+                IsTextPredictionEnabled="False"
+                Keyboard="{Binding Keyboard, Source={x:Reference this}}"
+                MaxLength="{Binding MaxLenght, Source={x:Reference this}}"
+                Placeholder="{Binding Title, Source={x:Reference this}}"
+                PlaceholderColor="{Binding TextColor, Source={x:Reference this}}"
+                ReturnType="{Binding ReturnType, Source={x:Reference this}}"
+                Text="{Binding Text, Source={x:Reference this}}"
+                TextColor="{Binding TextColor, Source={x:Reference this}}"
+                Style="{StaticResource AlternativeEntryStyle}">
+                <cc:EntryWithoutUnderline.Behaviors>
+                    <behavior:EntryCompletedBehavior Command="{Binding ActionCommand, Source={x:Reference this}}" />
+                </cc:EntryWithoutUnderline.Behaviors>
+            </cc:EntryWithoutUnderline>
+        </StackLayout>
+        <BoxView
+            BackgroundColor="White"
+            HeightRequest="1"
+            HorizontalOptions="Fill" />
+    </StackLayout>
+</StackLayout>

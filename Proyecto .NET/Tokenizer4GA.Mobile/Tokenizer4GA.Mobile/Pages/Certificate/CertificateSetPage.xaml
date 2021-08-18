@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tokenizer4GA.Mobile.Pages.Certificate.CertificateSetPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:localization="clr-namespace:Tokenizer4GA.Shared.Localization;assembly=Tokenizer4GA.Shared"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:Tokenizer4GA.Shared.ViewModels.Certificate;assembly=Tokenizer4GA.Shared" xmlns:magicgradients="http://magic.com/schemas/gradients" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Name="Page"
+    Title="{Binding Title}"
+    x:DataType="viewmodels:CertificateSetViewModel"
+    ControlTemplate="{StaticResource FramePageTemplate}"
+    mc:Ignorable="d">
+    <StackLayout>
+        <ScrollView>
+            <Grid RowDefinitions="50*, 15*, Auto, Auto">
+
+                <ffimageloading:CachedImage
+                    Grid.Row="0"
+                    HeightRequest="64"
+                    HorizontalOptions="Center"
+                    Source="GAautomotriz.jpg"/>
+
+                <BoxView Grid.Row="1" />
+
+                <StackLayout
+                    Spacing="16"
+                    Grid.Row="2">
+                    <Grid 
+                        RowSpacing="16"
+                        RowDefinitions="auto">
+                        <ffimageloadingsvg:SvgCachedImage
+                            Margin="8"
+                            HeightRequest="96"
+                            HorizontalOptions="Center"
+                            Source="document_icon" />
+                    </Grid>
+
+                    <StackLayout Padding="0" >
+                        <Button 
+                            Command="{Binding SelectCertificateCommand}" 
+                            Text="{x:Static localization:LocalizedStrings.AddCertificate}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <BoxView Grid.Row="3"
+                         Margin="0,15,0,0" />
+
+                <Grid
+                    Grid.Row="3"
+                    ColumnDefinitions="Auto, Auto"
+                    HorizontalOptions="Center">
+
+                    <ImageButton
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"
+                        HeightRequest="64"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Source="icon_frequent_questions.png"
+                        Margin="5,0" />
+                    
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource InteractionLabelStyle}"
+                        Text="{x:Static localization:LocalizedStrings.InfoCertificate}"
+                        HorizontalOptions="Center"
+                        Margin="0,10" />
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
