@@ -146,5 +146,59 @@ namespace Tokenizer4GA.Shared.Localization {
                 return ResourceManager.GetString("Exit", resourceCulture);
             }
         }
+        
+        public static string SelectFile {
+            get {
+                return ResourceManager.GetString("SelectFile", resourceCulture);
+            }
+        }
+        
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        public static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
+            }
+        }
+        
+        public static string NoInternetLogin {
+            get {
+                return ResourceManager.GetString("NoInternetLogin", resourceCulture);
+            }
+        }
+        
+        public static string LoginError {
+            get {
+                return ResourceManager.GetString("LoginError", resourceCulture);
+            }
+        }
+        
+        public static string ResendRegisterEmail {
+            get {
+                return ResourceManager.GetString("ResendRegisterEmail", resourceCulture);
+            }
+        }
+        
+        public static string RegisterUncompleted {
+            get {
+                return ResourceManager.GetString("RegisterUncompleted", resourceCulture);
+            }
+        }
     }
 }

@@ -13,7 +13,6 @@
     <item name="android:editTextStyle">@style/InputTextProperties</item>
     <item name="editTextStyle">@style/InputTextProperties</item>
     <item name="android:textViewStyle">@style/TextViewProperties</item>
-    <item name="android:datePickerStyle">@style/datepicker</item>
     <item name="android:navigationBarColor">@color/colorPrimary</item>
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -33,13 +32,6 @@
     <item name="android:windowContentOverlay">@null</item>
     <item name="android:windowActionBar">false</item>
     <item name="android:windowActionModeOverlay">true</item>
-  </style>
-
-  <style name="datepicker" parent="@android:style/Widget.DeviceDefault.DatePicker">
-    <item name="android:editTextStyle">@style/InputTextProperties</item>
-    <item name="editTextStyle">@style/InputTextProperties</item>
-    <item name="android:editTextBackground">@android:color/transparent</item>
-    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
   
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">

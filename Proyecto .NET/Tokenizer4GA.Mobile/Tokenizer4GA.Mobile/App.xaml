@@ -56,18 +56,6 @@
                 </VisualStateGroupList>
             </Setter>
         </Style>
-        <Style x:Key="buttonStyleZoomImage" TargetType="Button">
-            <Setter Property="BorderRadius" Value="0" />
-            <Setter Property="HeightRequest" Value="0" />
-            <Setter Property="TextColor" Value="Transparent" />
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
-            <Setter Property="BorderColor" Value="Transparent" />
-            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="BorderWidth" Value="0" />
-        </Style>
         <Style TargetType="CheckBox">
             <Setter Property="Color" Value="{StaticResource PrimaryColor}" />
         </Style>
@@ -75,11 +63,6 @@
             <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
             <Setter Property="ios:Page.UseSafeArea" Value="True" />
             <Setter Property="Visual" Value="Material" />
-        </Style>
-        <Style TargetType="DatePicker">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
-            <Setter Property="Background" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryDarkColor}, Light={StaticResource PrimaryDarkColor}}" />
         </Style>
         <Style TargetType="Editor">
             <Setter Property="AutoSize" Value="TextChanges" />
@@ -142,41 +125,10 @@
             <Setter Property="BackgroundColor" Value="{StaticResource ForegroundColor}" />
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryButtonColor}, Light={StaticResource PrimaryButtonColor}}" />
         </Style>
-        <Style x:Key="AlternativeEditorStyle" TargetType="Editor">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
-            <Setter Property="PlaceholderColor" Value="{StaticResource ForegroundColor}" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-        </Style>
         <Style x:Key="AlternativeEntryStyle" TargetType="Entry">
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
             <Setter Property="PlaceholderColor" Value="{StaticResource ForegroundColor}" />
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-        </Style>
-        <Style x:Key="AlternativeEntryPasswordStyle" TargetType="Entry">
-            <Setter Property="PlaceholderColor" Value="{StaticResource ForegroundColor}" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource ForegroundColor}, Light={StaticResource ForegroundColor}}" />
-        </Style>
-
-        <Style x:Key="AlternativeErrorLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="Margin" Value="2,4,0,0" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WarningColor}, Light={StaticResource WarningColor}}" />
-        </Style>
-        <Style x:Key="AlternativeInteractionLabelStyle" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-        </Style>
-        <Style x:Key="AlternativeLabelStyle" TargetType="Label">
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-        </Style>
-        <Style
-            x:Key="AlternativePickerStyle"
-            ApplyToDerivedTypes="True"
-            TargetType="Picker">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Transparent}, Light={StaticResource Transparent}}"/>
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-            <Setter Property="TitleColor" Value="{StaticResource ForegroundColor}" />
         </Style>
         <Style x:Key="AlternativeTitleLabelBlackStyle" TargetType="Label">
             <Setter Property="FontAttributes" Value="Bold" />
@@ -198,129 +150,17 @@
             <Setter Property="FontSize" Value="14" />
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryDarkColor}, Light={StaticResource PrimaryDarkColor}}" />
         </Style>
-        <Style x:Key="AlternativeTitleLabelStyle" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource ForegroundColor}, Light={StaticResource ForegroundColor}}" />
-        </Style>
-        <Style x:Key="AlternativeVoidButtonStyle" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryButtonColor}" />
-            <Setter Property="BorderColor" Value="{StaticResource ForegroundColor}" />
-            <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource ForegroundColor}, Light={StaticResource ForegroundColor}}" />
-            <Setter Property="VerticalOptions" Value="Fill" />
-        </Style>
         <Style x:Key="AlternativeAccountLabelStyle" TargetType="Label">
             <Setter Property="FontAttributes" Value="Bold" />
             <Setter Property="Margin" Value="5,5,0,0" />
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
         </Style>
-        <Style x:Key="ErrorLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="13" />
-            <Setter Property="Margin" Value="2,4,0,0" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource ErrorColor}, Light={StaticResource ErrorColor}}" />
-        </Style>
-        <Style x:Key="FooterButtonImageStyle" TargetType="ffimageloadingsvg:SvgCachedImage">
-            <Setter Property="HeightRequest" Value="24" />
-            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-        </Style>
-        <Style x:Key="FooterButtonLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-        </Style>
-        <Style x:Key="FooterButtonStackLayoutStyle" TargetType="StackLayout">
-            <Setter Property="Orientation" Value="Horizontal" />
-            <Setter Property="Spacing" Value="8" />
-        </Style>
         <Style x:Key="InteractionLabelStyle" TargetType="Label">
             <Setter Property="FontAttributes" Value="Bold" />
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource AccentColor}, Light={StaticResource AccentColor}}" />
         </Style>
-        <Style x:Key="CircleBoxViewStyle" TargetType="BoxView">
-            <Setter Property="Color" Value="{StaticResource ErrorColor}" />
-            <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="HeightRequest" Value="20" />
-            <Setter Property="WidthRequest" Value="20" />
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-        </Style>
-        <Style x:Key="CounterLabelStyle" TargetType="Label">
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource BackgroundColor}, Light={StaticResource BackgroundColor}}" />
-        </Style>
-        <Style x:Key="SeparatorBoxViewStyle" TargetType="BoxView">
-            <Setter Property="Color" Value="{StaticResource SeparatorColor}" />
-            <Setter Property="HeightRequest" Value="1" />
-            <Setter Property="HorizontalOptions" Value="Fill" />
-        </Style>
-        <Style x:Key="SlimSeparatorBoxViewStyle" TargetType="BoxView">
-            <Setter Property="Color" Value="{StaticResource SeparatorColor}" />
-            <Setter Property="HeightRequest" Value=".5" />
-            <Setter Property="HorizontalOptions" Value="Fill" />
-        </Style>
-        <Style x:Key="TitleLabelSmallStyle" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource Black}}" />
-        </Style>
-        <Style x:Key="LabelSmallStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource HintColor}, Light={StaticResource HintColor}}" />
-        </Style>
-        <Style x:Key="TitleLabelStyle" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource HintColor}, Light={StaticResource HintColor}}" />
-        </Style>
-        <Style x:Key="TitleLabelLargeStyle" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource HintColor}, Light={StaticResource HintColor}}" />
-        </Style>
-        <Style x:Key="TitleLabelLinkStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource AccentColor}, Light={StaticResource AccentColor}}" />
-        </Style>
-        <Style x:Key="VerticalSeparatorBoxViewStyle" TargetType="BoxView">
-            <Setter Property="Color" Value="{StaticResource SeparatorColor}" />
-            <Setter Property="VerticalOptions" Value="Fill" />
-            <Setter Property="WidthRequest" Value="1" />
-        </Style>
-        <Style x:Key="VoidButtonStyle" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource ForegroundColor}" />
-            <Setter Property="BorderColor" Value="{StaticResource PrimaryButtonColor}" />
-            <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource PrimaryButtonColor}, Light={StaticResource PrimaryButtonColor}}" />
-            <Setter Property="VerticalOptions" Value="Fill" />
-        </Style>
-        <Style x:Key="FrameDealer" TargetType="Frame">
-            <Setter Property="BorderColor" Value="Orange" />
-            <Setter Property="HasShadow" Value="True" />
-            <Setter Property="CornerRadius" Value="10" />
-        </Style>
 
-        <Style x:Key="CustomValueLabelStyle" TargetType="Label">
-            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}" />
-        </Style>
         <!--  Page templates !  -->
-        <ControlTemplate x:Key="FramePageSeguroTemplate">
-            <Grid>
-                <magicgradients:GradientView>
-                    <magicgradients:GradientView.GradientSource>
-                        <magicgradients:LinearGradient>
-                            <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
-                            <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
-                        </magicgradients:LinearGradient>
-                    </magicgradients:GradientView.GradientSource>
-                </magicgradients:GradientView>
-                <StackLayout Padding="16, 0, 16, 16">
-                    <Frame>
-                        <ContentPresenter />
-                    </Frame>
-                </StackLayout>
-            </Grid>
-        </ControlTemplate>
         <ControlTemplate x:Key="FramePageTemplate">
             <Grid>
                 <magicgradients:GradientView>
@@ -335,94 +175,6 @@
                     <Frame>
                         <ContentPresenter />
                     </Frame>
-                </ScrollView>
-            </Grid>
-        </ControlTemplate>
-        <ControlTemplate x:Key="GradientHeaderPageTemplate">
-            <Grid ColumnDefinitions="3*,Auto" RowDefinitions="*, 3*">
-                <magicgradients:GradientView
-                    Grid.RowSpan="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2">
-                    <magicgradients:GradientView.GradientSource>
-                        <magicgradients:LinearGradient>
-                            <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
-                            <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
-                        </magicgradients:LinearGradient>
-                    </magicgradients:GradientView.GradientSource>
-                </magicgradients:GradientView>
-                <BoxView
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Color="white" />
-                <ffimageloading:CachedImage
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    HeightRequest="64"
-                    HorizontalOptions="Center"
-                    Source="GAautomotriz.jpg" />
-                <ImageButton
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    BackgroundColor="Transparent"
-                    Command="{Binding HelpCommand, Mode=OneTime}"
-                    Source="ic_help.png" />
-                <ScrollView
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2">
-                    <ContentPresenter />
-                </ScrollView>
-            </Grid>
-        </ControlTemplate>
-        <ControlTemplate x:Key="GradientPageTemplate">
-            <Grid>
-                <magicgradients:GradientView>
-                    <magicgradients:GradientView.GradientSource>
-                        <magicgradients:LinearGradient>
-                            <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
-                            <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
-                        </magicgradients:LinearGradient>
-                    </magicgradients:GradientView.GradientSource>
-                </magicgradients:GradientView>
-                <ScrollView Padding="32">
-                    <ContentPresenter />
-                </ScrollView>
-            </Grid>
-        </ControlTemplate>
-        <ControlTemplate x:Key="GradientPageNoScrollViewTemplate">
-            <Grid>
-                <magicgradients:GradientView>
-                    <magicgradients:GradientView.GradientSource>
-                        <magicgradients:LinearGradient>
-                            <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
-                            <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
-                        </magicgradients:LinearGradient>
-                    </magicgradients:GradientView.GradientSource>
-                </magicgradients:GradientView>
-                <ContentPresenter />
-            </Grid>
-        </ControlTemplate>
-        <ControlTemplate x:Key="HeaderPageTemplate">
-            <Grid RowDefinitions="*, 3*">
-                <magicgradients:GradientView Grid.RowSpan="2">
-                    <magicgradients:GradientView.GradientSource>
-                        <magicgradients:LinearGradient>
-                            <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
-                            <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
-                        </magicgradients:LinearGradient>
-                    </magicgradients:GradientView.GradientSource>
-                </magicgradients:GradientView>
-                <BoxView Grid.Row="0" Color="white" />
-                <ffimageloading:CachedImage
-                    Grid.Row="0"
-                    HeightRequest="64"
-                    HorizontalOptions="Center"
-                    Source="GAautomotriz.jpg" />
-                <ScrollView Grid.Row="1">
-
-                    <ContentPresenter />
                 </ScrollView>
             </Grid>
         </ControlTemplate>

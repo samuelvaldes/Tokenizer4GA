@@ -10,7 +10,7 @@
        x:DataType="viewmodels:AppShellViewModel">
     <FlyoutItem FlyoutDisplayOptions="AsSingleItem">
         <ShellContent
-            ContentTemplate="{DataTemplate pages:HomePage}">
+            ContentTemplate="{DataTemplate pages:TokenPage}">
         </ShellContent>
     </FlyoutItem>
 </Shell>

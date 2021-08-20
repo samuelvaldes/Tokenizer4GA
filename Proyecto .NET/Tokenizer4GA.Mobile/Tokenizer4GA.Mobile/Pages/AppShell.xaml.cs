@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Tokenizer4GA.Mobile.Pages.Certificate;
+using Tokenizer4GA.Mobile.Pages.Login;
 using Xamarin.Forms;
 
 namespace Tokenizer4GA.Mobile.Pages
@@ -16,8 +17,9 @@ namespace Tokenizer4GA.Mobile.Pages
     {
         private static readonly Dictionary<string, Type> _pagesByLocation = new Dictionary<string, Type>
         {
-            { Locations.HomePage, typeof(HomePage) },
-            { Locations.CertificateSetPage, typeof(CertificateSetPage) }
+            { Locations.TokenPage, typeof(TokenPage) },
+            { Locations.CertificateSetPage, typeof(CertificateSetPage) },
+            { Locations.LoginPage, typeof(LoginPage) }
         };
 
         private static readonly Type[] _dataLossSensitivePages = {
@@ -25,15 +27,16 @@ namespace Tokenizer4GA.Mobile.Pages
         };
 
         private static readonly Type[] _sessionRequiredPages = {
-            typeof(HomePage)
+            typeof(TokenPage)
         };
 
         private static readonly Type[] _noHistoryPages = {
-            typeof(CertificateSetPage)
+            typeof(CertificateSetPage),
+            typeof(LoginPage)
         };
 
         private static readonly Type[] _paginationPages = {
-            typeof(HomePage)
+            typeof(TokenPage)
         };
 
         private readonly AppShellViewModel _vm;

@@ -32,6 +32,6 @@ namespace Tokenizer4GA.Mobile.Controls
         //ToDo: Create structure to implement a ViewModel and track stack navigation
         // This functionallity gonna be implemented in the next pull request 
         async void ToolbarItem_Clicked(object sender, System.EventArgs e) =>
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new TokenPage());
     }
 }

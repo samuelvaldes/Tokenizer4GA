@@ -1,38 +1,13 @@
 {
-  "InformationService": "http://189.204.141.203:8181/API/Information/",
-  "ProfileService": "http://189.204.141.203:8181/API/Profile/",
-  "VehiclesService": "http://189.204.141.203:8181/API/Vehicles/",
-  "ClientService": "http://189.204.141.203:8181/API/Client/",
-  "SyncService": "http://189.204.141.203:8181/API/Sync/",
-  "InsuranceService": "http://189.204.141.203:8181/API/Insurance/",
-  "ServiceAppointmentService": "http://189.204.141.203:8181/API/ServiceAppointment/"
+  "ProfileService": "http://189.204.141.203:8181/API/Profile/"
 
   /*
   --- Normal
-  "InformationService": "http://189.204.141.203:8181/API/Information/",
-  "ProfileService": "http://189.204.141.203:8181/API/Profile/",
-  "VehiclesService": "http://189.204.141.203:8181/API/Vehicles/",
-  "ClientService": "http://189.204.141.203:8181/API/Client/",
-  "SyncService": "http://189.204.141.203:8181/API/Sync/",
-  "InsuranceService": "http://189.204.141.203:8181/API/Insurance/",
-  "InsuranceService": "http://189.204.141.203:8181/API/ServiceAppointment/"
-  "ServiceAppointmentService": "http://189.204.141.203:8181/API/ServiceAppointment/"
+  "ProfileService": "http://189.204.141.203:8181/API/Profile/"
 
   --- NuevaAPI apuntando a producción de INTERproteccion
-  "InformationService": "http://189.204.141.203:9191/API/Information/",
-  "ProfileService": "http://189.204.141.203:9191/API/Profile/",
-  "VehiclesService": "http://189.204.141.203:9191/API/Vehicles/",
-  "ClientService": "http://189.204.141.203:9191/API/Client/",
-  "SyncService": "http://189.204.141.203:9191/API/Sync/",
-  "InsuranceService": "http://189.204.141.203:9191/API/Insurance/",
-  "InsuranceService": "http://189.204.141.203:9191/API/ServiceAppointment/"
-  "ServiceAppointmentService": "http://189.204.141.203:9191/API/ServiceAppointment/"
+  "ProfileService": "http://189.204.141.203:9191/API/Profile/"
 
-  "InformationService": "http://10.0.2.2:5000/API/Information/",
-  "ProfileService": "http://10.0.2.2:5000/API/Profile/",
-  "VehiclesService": "http://10.0.2.2:5000/API/Vehicles/",
-  "ClientService": "http://10.0.2.2:5000/API/Client/",
-  "SyncService": "http://10.0.2.2:5000/API/Sync/"
-
+  "ProfileService": "http://10.0.2.2:5000/API/Profile/"
   */
 }

@@ -2,6 +2,6 @@
 {
     public interface IEnviroments
     {
-        string InformationService { get; set; }
+        string ProfileService { get; set; }
     }
 }

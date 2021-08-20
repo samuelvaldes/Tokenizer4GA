@@ -14,5 +14,6 @@
         public const string UsedMockServices = nameof(UsedMockServices);
 
         public const string HomeMenuPage = nameof(HomeMenuPage);
+        public const string MustChangePassword = nameof(MustChangePassword);
     }
 }

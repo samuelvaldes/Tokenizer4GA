@@ -13,8 +13,8 @@ namespace Tokenizer4GA.Shared.JobServices.Sync
 {
     public class SyncInformation : BaseRestService, ISyncInformation
     {
-        protected override string Server => EnviromentManager.Configurations.InformationService;
-        private static string ServerInformation => EnviromentManager.Configurations.InformationService;       
+        protected override string Server => EnviromentManager.Configurations.ProfileService;
+        private static string ServerProfile => EnviromentManager.Configurations.ProfileService;       
 
         //private readonly ISyncContextGa _ctx;
         private readonly IRequestManagerService _requestManager;
@@ -90,7 +90,7 @@ namespace Tokenizer4GA.Shared.JobServices.Sync
                     var request = _requestManager.CreateBaseRequest();
                     request.AppVersion = Version;
                     request.BearerToken = Token;
-                    BaseResponse<Menu[]> result = await GetAsync<Menu[]>($"{ServerInformation}GetHomeMenus", request);
+                    BaseResponse<Menu[]> result = await GetAsync<Menu[]>($"{ServerProfile}GetHomeMenus", request);
                     if (result.Success)
                     {
                         //await _info.SaveMenuListAsync(result.Data);

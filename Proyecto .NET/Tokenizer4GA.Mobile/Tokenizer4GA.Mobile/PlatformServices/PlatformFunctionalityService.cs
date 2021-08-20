@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Tokenizer4GA.Mobile.Pages.Certificate;
+using Tokenizer4GA.Mobile.Pages.Login;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -178,6 +179,9 @@ namespace Tokenizer4GA.Mobile.PlatformServices
 
         public void NavigateToCertificate() =>
             Application.Current.MainPage = new CertificateSetPage();
+
+        public void NavigateToLogin() =>
+            Application.Current.MainPage = new LoginPage();
 
         public async Task NavigateCloseModal() =>
             await Application.Current.MainPage.Navigation.PopModalAsync();

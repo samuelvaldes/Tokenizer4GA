@@ -6,6 +6,6 @@ namespace Tokenizer4GA.Shared
 {
     public class AppSettings
     {
-        public static string DatabaseName = "GA_Mobile.db3";
+        public static string DatabaseName = "Tokenizer4GA_Mobile.db3";
     }
 }

@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\DroidTooltipEffect.cs" />
+    <Compile Include="Renderers\EntryWithoutUnderlineRenderer.cs" />
     <Compile Include="Services\BaseUrlService.cs" />
     <Compile Include="Services\PhotoPickerService.cs" />
     <Compile Include="LaunchScreenActivity.cs" />
@@ -445,6 +446,9 @@
     <AndroidAsset Include="Assets\LottieLogo1.json" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_eye.png" />
+    <AndroidResource Include="Resources\drawable\ic_eye_close.png" />
+    <AndroidResource Include="Resources\drawable\inicio2x.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
@@ -483,6 +487,7 @@
       <Generator>
       </Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\xml\network_security_config.xml" />
     <AndroidResource Include="Resources\xml\provider_paths.xml">
       <SubType>
       </SubType>

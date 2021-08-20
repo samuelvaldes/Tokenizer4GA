@@ -1,10 +1,10 @@
-﻿using Tokenizer4GA.Mobile.Pages.Certificate;
-using Tokenizer4GA.Shared.ViewModels.Environment;
+﻿using Tokenizer4GA.Shared.ViewModels.Environment;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Plugin.Media;
 using Tokenizer4GA.Mobile.Pages;
+using Tokenizer4GA.Mobile.Pages.Login;
 using Xamarin.Forms;
 using Tokenizer4GA.Shared.JobServices;
 using AndroidSpecific = Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
@@ -12,7 +12,7 @@ using Device = Xamarin.Forms.Device;
 
 namespace Tokenizer4GA.Mobile
 {
-    public partial class App : Application
+    public partial class App
     {
         private readonly AppShellViewModel _vm;
         private readonly Shared.JobServices.Sync.ISyncInformation _job;
@@ -31,7 +31,7 @@ namespace Tokenizer4GA.Mobile
             if (_vm.IsStorageUser().Result)
                 MainPage = new AppShell();
             else
-                MainPage = new CertificateSetPage();
+                MainPage = new LoginPage();
 
             
             CrossMedia.Current.Initialize();

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tokenizer4GA.Mobile.Pages.Login.LoginPage"
+             xmlns:controls="clr-namespace:Tokenizer4GA.Mobile.Controls"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:localization="clr-namespace:Tokenizer4GA.Shared.Localization;assembly=Tokenizer4GA.Shared"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:triggers="clr-namespace:Tokenizer4GA.Mobile.Triggers"
+             xmlns:viewmodels="clr-namespace:Tokenizer4GA.Shared.ViewModels.Login;assembly=Tokenizer4GA.Shared"
+             x:DataType="viewmodels:LoginViewModel"
+             xmlns:magicgradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, 3*" ColumnDefinitions="3*,Auto">
+            <magicgradients:GradientView Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <magicgradients:GradientView.GradientSource>
+                    <magicgradients:LinearGradient>
+                        <magicgradients:GradientStop Offset="0" Color="{StaticResource PrimaryDarkColor}" />
+                        <magicgradients:GradientStop Offset="1" Color="{StaticResource PrimaryColor}" />
+                    </magicgradients:LinearGradient>
+                </magicgradients:GradientView.GradientSource>
+            </magicgradients:GradientView>
+            <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Color="White" />
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="64"
+                HorizontalOptions="Center"
+                Source="GAautomotriz.jpg" BackgroundColor="Transparent" Margin="0,1" />
+            <ScrollView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <StackLayout VerticalOptions="StartAndExpand" Margin="0,10,0,0">
+                    <Label
+                        HorizontalOptions="Start"
+                        Style="{StaticResource AlternativeAccountLabelStyle}"
+                        Text="{Binding VersionEnvironment}" Margin="20,0,0,0" />
+                    <StackLayout Padding="16" Spacing="16">
+                        <StackLayout Spacing="8" VerticalOptions="Center">
+                            <StackLayout>
+                                <controls:CustomEntry
+                                    Keyboard="Email"
+                                    Title="{x:Static localization:LocalizedStrings.Email}"
+                                    ReturnType="Next"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="White"
+                                    Text="{Binding Email}" />
+                                <controls:EntryMessageControl
+                                    ImageSource="ic_error"
+                                    IsVisible="{Binding EmailIsValid, Converter={StaticResource negateNullableBooleanConverter}}"
+                                    MessageTypes="Warning"
+                                    Text="{x:Static localization:LocalizedStrings.InvalidEmail}" />
+                            </StackLayout>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <controls:CustomEntry
+                                        Title="{x:Static localization:LocalizedStrings.Password}"
+                                        ActionCommand="{Binding LoginCommand}"
+                                        HorizontalOptions="FillAndExpand"
+                                        IsPassword="{Binding Source={x:Reference TogglePasswordIcon}, Path=HidePassword}"
+                                        Text="{Binding Password}"
+                                        TextColor="White" />
+                                    <ImageButton
+                                        HeightRequest="20"
+                                        HorizontalOptions="End"
+                                        Source="ic_eye"
+                                        VerticalOptions="Center"
+                                        WidthRequest="20"
+                                        Margin="5">
+                                        <ImageButton.Triggers>
+                                            <EventTrigger Event="Clicked">
+                                                <triggers:ToggleTrigger
+                                                    x:Name="TogglePasswordIcon"
+                                                    HideIcon="ic_eye"
+                                                    ShowIcon="ic_eye_close" />
+                                            </EventTrigger>
+                                        </ImageButton.Triggers>
+                                    </ImageButton>
+                                </StackLayout>
+                            </StackLayout>
+                            <Button
+                                Margin="0,16,0,0"
+                                Command="{Binding LoginCommand, Mode=OneTime}"
+                                ImageSource="inicio2x.png"
+                                Style="{StaticResource AlternativeButtonStyle}"
+                                Text="{x:Static localization:LocalizedStrings.Login}" VerticalOptions="End" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

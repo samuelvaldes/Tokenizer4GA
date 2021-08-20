@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tokenizer4GA.Mobile.Pages.Token.TokenPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:localization="clr-namespace:Tokenizer4GA.Shared.Localization;assembly=Tokenizer4GA.Shared"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:Tokenizer4GA.Shared.ViewModels.Token;assembly=Tokenizer4GA.Shared"
+    x:Name="Page"
+    Title="{x:Static localization:LocalizedStrings.Token}"
+    x:DataType="viewmodels:TokenViewModel"
+    BackgroundColor="{StaticResource PrimaryDarkColor}"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d"
+    ControlTemplate="{StaticResource FramePageTemplate}">
+    <RefreshView Command="{Binding RefreshCommand}"
+                 IsRefreshing="{Binding IsRefreshing}">
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, Auto">
+                <ffimageloading:CachedImage
+                    Grid.Row="0"
+                    HeightRequest="64"
+                    HorizontalOptions="Center"
+                    Source="GAautomotriz.jpg"
+                    Margin="0, 10, 0, 30"/>
+                
+                <Grid
+                    RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+                    Grid.Row="1"
+                    HorizontalOptions="Center">
+
+                    <BoxView
+                        Grid.Row="0"
+                        Margin="0,15"/>
+
+                    <Label
+                        Grid.Row="0"
+                        Style="{StaticResource AlternativeTitleLabelBlackStyle}"
+                        Text="Código de seguridad"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Grid.Row="1"
+                        Style="{StaticResource AlternativeLabelBlueBoldStyle}"
+                        Text="El código de seguridad para tu operación es:"
+                        HorizontalOptions="CenterAndExpand" />
+
+                    <BoxView
+                        Grid.Row="2"
+                        Margin="0,15"
+                        Color="{x:StaticResource SeparatorColor}"/>
+
+                    <Label
+                        Grid.Row="2"
+                        Margin="0,20,0,15"
+                        Style="{StaticResource AlternativeLabelBlueStyle}"
+                        Text="{Binding TotpCode}"
+                        HorizontalOptions="Center" />
+
+                    <StackLayout
+                        Grid.Row="3"
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End">
+
+                        <Image
+                            BackgroundColor="Transparent"
+                            
+                            Source="informacion2x.png"
+                            HorizontalOptions="Center" />
+                    
+                        <Label
+                            Style="{StaticResource AlternativeNoteLabelBlueStyle}"
+                            Text="Este código será válido por: "
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Padding="10" />
+
+                    </StackLayout>
+
+                    <StackLayout
+                        Grid.Row="4"
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start">
+
+                        <Image
+                            BackgroundColor="Transparent"
+                            
+                            HorizontalOptions="Center"
+                            Source="hora2x.png" />
+                    
+                        <Label
+                            Style="{StaticResource InteractionLabelStyle}"
+                            Text="{Binding RemainingTime}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Padding="10,0,5,0" />
+
+                        <Label
+                            Style="{StaticResource InteractionLabelStyle}"
+                            Text="segundos"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center" />
+
+                    </StackLayout>
+
+                </Grid>
+
+                <Label
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource AlternativeTitleLabelBlackStyle}"
+                    Text="{Binding VersionEnvironment}"
+                    Padding="0,50,0,5"/>
+
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

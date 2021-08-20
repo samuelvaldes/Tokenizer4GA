@@ -90,6 +90,9 @@
     <BundleResource Include="Resources\b_info2x.png" />
     <BundleResource Include="Resources\b_regnuev2x.png" />
     <BundleResource Include="Resources\b_valet2x.png" />
+    <BundleResource Include="Resources\ic_eye.png" />
+    <BundleResource Include="Resources\ic_eye_close.png" />
+    <BundleResource Include="Resources\inicio2x.png" />
     <BundleResource Include="Resources\nuevo_doc2x.png" />
     <BundleResource Include="Resources\logoGA.png" />
     <BundleResource Include="Resources\GAautomotriz.jpg" />

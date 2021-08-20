@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Tokenizer4GA.Shared.ViewModels.General;
 using Tokenizer4GA.Shared.ViewModels.Certificate;
+using Tokenizer4GA.Shared.ViewModels.Login;
 
 namespace Tokenizer4GA.Mobile
 {
@@ -32,8 +33,9 @@ namespace Tokenizer4GA.Mobile
         };
 
         private static readonly Type[] _viewModels = {
-            typeof(HomeViewModel),
+            typeof(TokenViewModel),
             typeof(CertificateSetViewModel),
+            typeof(LoginViewModel),
             
             
             typeof(WebViewerViewModel)
@@ -49,14 +51,14 @@ namespace Tokenizer4GA.Mobile
         {
             { typeof(PathService), typeof(IPathService) },
             { typeof(ContextGA), typeof(IDbContext) },
-            { typeof(InformationRestService), typeof(IInformationService) },
+            { typeof(ProfileRestService), typeof(IProfileService) },
             { typeof(SyncInformation), typeof(ISyncInformation) },
             { typeof(SyncContexGa), typeof(ISyncContextGa) }
         };
 
         private static readonly Dictionary<Type, Type> _webServicesMocks = new Dictionary<Type, Type>
         {
-            {  typeof(InformationMock), typeof(IInformationService) }
+            {  typeof(ProfileMock), typeof(IProfileService) }
         };
 
         private static ViewModelLocator _instance;
