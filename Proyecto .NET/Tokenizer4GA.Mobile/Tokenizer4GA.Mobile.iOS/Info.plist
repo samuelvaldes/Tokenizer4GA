@@ -76,11 +76,11 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Las imágenes obtenidas con la cámara y desde la biblioteca, se utilizarán única y exclusivamente para enriquecer el expediente electrónico de sus autos y documentos.</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.0</string>
+	<string>1.0.0</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Se requiere acceso a la ubicación para el servicio de valet parking.</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>1</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

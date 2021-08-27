@@ -1,8 +1,4 @@
-﻿using Tokenizer4GA.Shared.Models.Information;
-using Tokenizer4GA.Shared.WebServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Tokenizer4GA.Shared.WebServices;
 using System.Threading.Tasks;
 
 namespace Tokenizer4GA.Shared.JobServices.Sync

@@ -13,7 +13,6 @@ namespace Tokenizer4GA.Shared.PlatformServices.Contracts
         void Loading(string message);
         void SetLoadingMessage(string message);
         void CloseLoading();
-
         Task DisplayAlertAsync(string message, string title = null);
         Task DisplayAlertNativeAsync(string message, string title = null);
         Task<bool> DisplayConfirmationAlertAsync(string message, string title = null,
@@ -29,8 +28,6 @@ namespace Tokenizer4GA.Shared.PlatformServices.Contracts
         Task NavigateToAsync(string resource, Dictionary<string, string> parameters = null);
         Task NavigateToWebAsync(string url);
         void NavigateToToken();
-
-        Task NavigateToModal();
         Task NavigateToBackModal();
         void NavigateToCertificate();
         Task NavigateCloseModal();
@@ -40,7 +37,6 @@ namespace Tokenizer4GA.Shared.PlatformServices.Contracts
         void SetSetting(string key, string value);
         Task<string> GetSecureDataAsync(string key, string defaultValue = null);
         Task SetSecureDataAsync(string key, string value);
-        Task<DocumentSetFile> SelectPdfAsBase64Async();
         Task<DocumentSetFile> SelectCertificateAsBase64Async();
         Task<string> SaveBase64FileAsync(string name, string extension, string base64File, bool overwriteFile = true);
         Task ShowEmbeddedWebsiteAsync(string title, string uri);

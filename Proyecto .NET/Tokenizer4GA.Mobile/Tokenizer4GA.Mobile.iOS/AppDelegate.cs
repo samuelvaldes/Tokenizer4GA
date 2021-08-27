@@ -1,10 +1,6 @@
-﻿
-using Tokenizer4GA.Mobile.DependencyServices;
-using Tokenizer4GA.Mobile.iOS;
+﻿using Tokenizer4GA.Mobile.iOS;
 using Foundation;
-using System.Threading.Tasks;
 using UIKit;
-using UserNotifications;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(AppDelegate))]
@@ -25,8 +21,6 @@ namespace Tokenizer4GA.Mobile.iOS
             Xamarin.FormsMaps.Init();
 
             LoadApplication(new App());
-
-            UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
             UINavigationBar.Appearance.Translucent = false;
 

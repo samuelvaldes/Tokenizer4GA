@@ -1,9 +1,3 @@
 {
-  "InformationService": "https://grupoandrade.com:8181/API/Information/",
-  "ProfileService": "https://grupoandrade.com:8181/API/Profile/",
-  "VehiclesService": "https://grupoandrade.com:8181/API/Vehicles/",
-  "ClientService": "https://grupoandrade.com:8181/API/Client/",
-  "SyncService": "https://grupoandrade.com:8181/API/Sync/",
-  "InsuranceService": "https://grupoandrade.com:8181/API/Insurance/",
-  "ServiceAppointmentService": "https://grupoandrade.com:8181/API/ServiceAppointment/"
+  "ProfileService": "https://grupoandrade.com:8181/API/Profile/"
 }

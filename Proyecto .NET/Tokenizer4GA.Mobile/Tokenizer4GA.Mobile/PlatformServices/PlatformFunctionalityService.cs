@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Tokenizer4GA.Mobile.Pages.Certificate;
 using Tokenizer4GA.Mobile.Pages.Login;
 using Xamarin.Essentials;
@@ -225,17 +226,16 @@ namespace Tokenizer4GA.Mobile.PlatformServices
 
         public async Task<string> SaveBase64FileAsync(string name, string extension, string base64File, bool overwriteFile = true)
         {
-            var filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"{name}.{extension}");
-            if (File.Exists(filepath)
-                && overwriteFile)
+            var filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), $"{name}.{extension}");
+            if (File.Exists(filepath) && overwriteFile)
                 File.Delete(filepath);
+
             if (!File.Exists(filepath))
                 await File.WriteAllBytesAsync(filepath, Convert.FromBase64String(base64File));
+
             return filepath;
         }
 
-        public async Task NavigateToModal() =>
-            await Shell.Current.GoToAsync("changePassword");
         public async Task NavigateToBackModal() =>
             await Shell.Current.Navigation.PopModalAsync();
 
@@ -316,28 +316,33 @@ namespace Tokenizer4GA.Mobile.PlatformServices
             return !(Connectivity.NetworkAccess == NetworkAccess.None);
         }
         
-        public async Task<DocumentSetFile> SelectPdfAsBase64Async()
+        public async Task<DocumentSetFile> SelectCertificateAsBase64Async()
         {
             DocumentSetFile documentSetFile = new DocumentSetFile();
             try
             {
                 var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
                 {
-                    { DevicePlatform.iOS, new[] { "com.adobe.pdf" } },
-                    { DevicePlatform.Android, new[] {"application/pdf"} }
+                    { DevicePlatform.iOS, new[] { "public.xml", "UTType.Xml" } },
+                    { DevicePlatform.Android, new[] { "text/xml" } }
                 });
 
                 var pickResult = await FilePicker.PickAsync(new PickOptions
                 {
                     FileTypes = customFileType,
-                    PickerTitle = "Pick a PDF"
+                    PickerTitle = "Selecciona el certificado"
                 });
 
-                if (pickResult != null)
+                if(pickResult == null) {
+                    await DisplayAlertNativeAsync(LocalizedStrings.NullErrorCertificate);
+                    return documentSetFile;
+                }
+
+                if (pickResult.FileName.EndsWith("xml", StringComparison.OrdinalIgnoreCase))
                 {
                     documentSetFile.Description = pickResult.FileName;
                     documentSetFile.Url = pickResult.FullPath;
-                    documentSetFile.Type = DocumentSetFileType.Pdf;
+                    documentSetFile.Type = DocumentSetFileType.Xml;
                     var stream = await pickResult.OpenReadAsync();
                     byte[] bytes;
                     using (var memoryStream = new MemoryStream())
@@ -347,44 +352,9 @@ namespace Tokenizer4GA.Mobile.PlatformServices
                     }
                     documentSetFile.Base64 = Convert.ToBase64String(bytes);
                 }
-            }
-            catch (Exception)
-            {
-                //ignored
-            }
-            return documentSetFile;
-        }
-
-        public async Task<DocumentSetFile> SelectCertificateAsBase64Async()
-        {
-            DocumentSetFile documentSetFile = new DocumentSetFile();
-            try
-            {
-                var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+                else
                 {
-                    { DevicePlatform.iOS, new[] { "com.adobe.pdf" } },
-                    { DevicePlatform.Android, new[] {"application/pdf"} }
-                });
-
-                var pickResult = await FilePicker.PickAsync(new PickOptions
-                {
-                    FileTypes = customFileType,
-                    PickerTitle = "Pick a PDF"
-                });
-
-                if (pickResult != null)
-                {
-                    documentSetFile.Description = pickResult.FileName;
-                    documentSetFile.Url = pickResult.FullPath;
-                    documentSetFile.Type = DocumentSetFileType.Pdf;
-                    var stream = await pickResult.OpenReadAsync();
-                    byte[] bytes;
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        stream.CopyTo(memoryStream);
-                        bytes = memoryStream.ToArray();
-                    }
-                    documentSetFile.Base64 = Convert.ToBase64String(bytes);
+                    await DisplayAlertNativeAsync(LocalizedStrings.ExtensionErrorCertificate);
                 }
             }
             catch (Exception)

@@ -1,7 +1,4 @@
 ﻿using Tokenizer4GA.Shared.Services.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Tokenizer4GA.Mobile.PlatformServices
@@ -10,8 +7,17 @@ namespace Tokenizer4GA.Mobile.PlatformServices
     {
         public string GetDatabasePath()
         {
-            var databasePath = DependencyService.Get<IPathService>().GetDatabasePath();
-            return databasePath;
+            return DependencyService.Get<IPathService>().GetDatabasePath();
+        }
+
+        public string GetCertificatePath()
+        {
+            return DependencyService.Get<IPathService>().GetCertificatePath();
+        }
+
+        public bool ExistCertificate()
+        {
+            return DependencyService.Get<IPathService>().ExistCertificate();
         }
     }
 }

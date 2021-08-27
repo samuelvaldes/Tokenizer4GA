@@ -12,6 +12,7 @@
     <None Remove="Xamarin.CommunityToolkit" />
     <None Remove="Otp.NET" />
     <None Remove="ViewModels\Token\" />
+    <None Remove="System.IO" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="DataStructures\" />
-    <Folder Include="Models\Document" />
     <Folder Include="ViewModels\General\" />
     <Folder Include="ViewModels\Token\" />
   </ItemGroup>
@@ -37,6 +37,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Otp.NET" Version="1.2.2" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

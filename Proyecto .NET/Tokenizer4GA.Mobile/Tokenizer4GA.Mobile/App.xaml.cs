@@ -25,15 +25,13 @@ namespace Tokenizer4GA.Mobile
             InitializeComponent();
             AndroidSpecific.Application.SetWindowSoftInputModeAdjust(this, AndroidSpecific.WindowSoftInputModeAdjust.Resize);
             _vm = ViewModelLocator.Instance.Resolve<AppShellViewModel>();
-            
-            //TODO Validar si el certificado ya existe en el dispositivo
-            //TODO ubtener del storage la huella digital que debió guardarse cuando se cargó el certificado
-            if (_vm.IsStorageUser().Result)
+
+            if (_vm.existCertificateValidated())
                 MainPage = new AppShell();
             else
                 MainPage = new LoginPage();
 
-            
+
             CrossMedia.Current.Initialize();
 
             //Init Jobs Sync

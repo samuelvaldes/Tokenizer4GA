@@ -10,6 +10,7 @@ using Tokenizer4GA.Shared.Data;
 using Tokenizer4GA.Shared.JobServices.Sync;
 using Tokenizer4GA.Shared.Localization;
 using Tokenizer4GA.Shared.Logic.General;
+using Tokenizer4GA.Shared.Services.Sqlite;
 
 namespace Tokenizer4GA.Shared.ViewModels.Login
 {
@@ -21,8 +22,9 @@ namespace Tokenizer4GA.Shared.ViewModels.Login
             IProfileService profile,
             IDeviceService deviceService,
             ISyncInformation syncInformation,
-            IDbContext ctx)
-            : base(requestManager, commandFactory, platformFunctionality, deviceService)
+            IDbContext ctx,
+            IPathService pathService)
+            : base(requestManager, commandFactory, platformFunctionality, deviceService, pathService)
         {
             _deviceService = deviceService;
             _profile = profile;

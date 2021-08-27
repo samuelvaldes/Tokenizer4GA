@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Input;
+using Tokenizer4GA.Shared.Services.Sqlite;
 
 namespace Tokenizer4GA.Shared.ViewModels.Token
 {
@@ -24,8 +25,8 @@ namespace Tokenizer4GA.Shared.ViewModels.Token
             ICommandFactoryService commandFactory,
             IPlatformFunctionalityService platformFunctionality,
             IProfileService profile,
-            IDeviceService deviceService)
-            : base(requestManager, commandFactory, platformFunctionality, deviceService)
+            IDeviceService deviceService, IPathService pathService)
+            : base(requestManager, commandFactory, platformFunctionality, deviceService, pathService)
         {
             _profile = profile;
             _deviceService = deviceService;
@@ -45,6 +46,8 @@ namespace Tokenizer4GA.Shared.ViewModels.Token
                     break;
             }
 
+            //TODO temp
+            ValidateCertificate();
         }
 
         protected override void Initialize()
@@ -173,6 +176,12 @@ namespace Tokenizer4GA.Shared.ViewModels.Token
                 _totpCode = value;
                 OnPropertyChanged();
             }
+        }
+
+        private void ValidateCertificate()
+        {
+            //TODO Implementar lógina para integrar proyecto MESSAGE
+            //var cryptoHelper = new CryptoHelper();
         }
 
         public ICommand RefreshCommand { get; private set; }

@@ -1,6 +1,7 @@
 ﻿using Tokenizer4GA.Shared.PlatformServices.Contracts;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Tokenizer4GA.Shared.Services.Sqlite;
 
 namespace Tokenizer4GA.Shared.ViewModels
 {
@@ -8,16 +9,17 @@ namespace Tokenizer4GA.Shared.ViewModels
     {
         public PageWithPaginationViewModel(IRequestManagerService requestManager,
             ICommandFactoryService commandFactory,
-            IPlatformFunctionalityService platformFunctionality)
-            : base(requestManager, commandFactory, platformFunctionality)
+            IPlatformFunctionalityService platformFunctionality,
+            IPathService pathService)
+            : base(requestManager, commandFactory, platformFunctionality, pathService)
         {
         }
 
         public PageWithPaginationViewModel(IRequestManagerService requestManager,
             ICommandFactoryService commandFactory,
             IPlatformFunctionalityService platformFunctionality,
-            IDeviceService deviceService)
-            : base(requestManager, commandFactory, platformFunctionality, deviceService)
+            IDeviceService deviceService, IPathService pathService)
+            : base(requestManager, commandFactory, platformFunctionality, deviceService, pathService)
         {
         }
 

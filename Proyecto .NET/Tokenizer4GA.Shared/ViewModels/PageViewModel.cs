@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Tokenizer4GA.Shared.Services.Sqlite;
 
 namespace Tokenizer4GA.Shared.ViewModels
 {
@@ -19,16 +20,19 @@ namespace Tokenizer4GA.Shared.ViewModels
         private readonly ICommandFactoryService _commandFactory;
         private readonly IPlatformFunctionalityService _platformFunctionality;
         private readonly IDeviceService _deviceService;
+        private readonly IPathService _pathService;
 
         public bool ConfirmedGoingBack { get; set; } = true;
 
         public PageViewModel(IRequestManagerService requestManager,
             ICommandFactoryService commandFactory,
-            IPlatformFunctionalityService platformFunctionality)
+            IPlatformFunctionalityService platformFunctionality,
+            IPathService pathService)
         {
             _requestManager = requestManager;
             _commandFactory = commandFactory;
             _platformFunctionality = platformFunctionality;
+            _pathService = pathService;
 
             Initialize();
 
@@ -39,12 +43,14 @@ namespace Tokenizer4GA.Shared.ViewModels
         public PageViewModel(IRequestManagerService requestManager,
             ICommandFactoryService commandFactory,
             IPlatformFunctionalityService platformFunctionality,
-            IDeviceService deviceService)
+            IDeviceService deviceService,
+            IPathService pathService)
         {
             _requestManager = requestManager;
             _commandFactory = commandFactory;
             _platformFunctionality = platformFunctionality;
             _deviceService = deviceService;
+            _pathService = pathService;
 
             Initialize();
 
@@ -68,6 +74,9 @@ namespace Tokenizer4GA.Shared.ViewModels
 
         public async Task<bool> IsStorageUser() =>
             !string.IsNullOrWhiteSpace(await GetSecureData(StorageKeys.IsStorageUser));
+
+        public bool existCertificateValidated() =>
+            _pathService.ExistCertificate();
 
         public async Task NavigateBackWithConfirmation()
         {
@@ -199,9 +208,6 @@ namespace Tokenizer4GA.Shared.ViewModels
 
         public virtual async Task SetSecureData(string key, string value) =>
             await _platformFunctionality.SetSecureDataAsync(key, value);
-
-        public virtual async Task<DocumentSetFile> SelectPdf() =>
-            await _platformFunctionality.SelectPdfAsBase64Async();
 
         public virtual async Task<DocumentSetFile> SelectCertificate() =>
             await _platformFunctionality.SelectCertificateAsBase64Async();

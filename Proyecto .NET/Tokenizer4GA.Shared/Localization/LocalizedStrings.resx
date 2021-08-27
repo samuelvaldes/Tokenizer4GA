@@ -201,4 +201,10 @@
     <data name="RegisterUncompleted" xml:space="preserve">
         <value>Ya casi concluimos tu registro</value>
     </data>
+    <data name="ExtensionErrorCertificate" xml:space="preserve">
+        <value>El documento seleccionado no es un certificado válido. Intentalo nuevamente.</value>
+    </data>
+    <data name="NullErrorCertificate" xml:space="preserve">
+        <value>Debe seleccionar el certificado para poder continuar.</value>
+    </data>
 </root>

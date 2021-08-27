@@ -3,6 +3,7 @@
     public enum DocumentSetFileType
     {
         Image = 1,
-        Pdf
+        Pdf,
+        Xml
     }
 }
