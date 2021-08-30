@@ -64,4 +64,7 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tokenizer4GA.Message\Message.csproj" />
+  </ItemGroup>
 </Project>
