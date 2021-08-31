@@ -20,6 +20,12 @@ namespace Tokenizer4GA.Mobile.Droid.Services.Sqlite
         public string GetCertificatePath()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string pathCertificate = Path.Combine(path, AppSettings.PathComplementCertificate);
+
+            if (!Directory.Exists(pathCertificate))
+            {
+                Directory.CreateDirectory(pathCertificate);
+            }
 
             return Path.Combine(path, $"{AppSettings.CertificateName}.{Strings.XmlFileExtension}");
         }
@@ -27,7 +33,7 @@ namespace Tokenizer4GA.Mobile.Droid.Services.Sqlite
         public bool ExistCertificate()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string pathCertificate = Path.Combine(path, $"{AppSettings.CertificateName}.{Strings.XmlFileExtension}");
+            string pathCertificate = Path.Combine(path, AppSettings.PathComplementCertificate, $"{AppSettings.CertificateName}.{Strings.XmlFileExtension}");
 
             return File.Exists(pathCertificate);
         }

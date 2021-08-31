@@ -27,7 +27,7 @@ namespace Tokenizer4GA.Mobile.iOS.Services.Sqlite
         public string GetCertificatePath()
         {
             string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libFolder = Path.Combine(docFolder, "..", "Library", "Certificate");
+            string libFolder = Path.Combine(docFolder, AppSettings.PathComplementCertificate);
 
             if (!Directory.Exists(libFolder))
             {
@@ -39,10 +39,10 @@ namespace Tokenizer4GA.Mobile.iOS.Services.Sqlite
 
         public bool ExistCertificate()
         {
-            string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libFolder = Path.Combine(docFolder, "..", "Library", "Certificate", $"{AppSettings.CertificateName}.{Strings.XmlFileExtension}");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string pathCertificate = Path.Combine(path, AppSettings.PathComplementCertificate, $"{AppSettings.CertificateName}.{Strings.XmlFileExtension}");
 
-            return File.Exists(libFolder);
+            return File.Exists(pathCertificate);
         }
     }
 }

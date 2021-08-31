@@ -13,7 +13,7 @@ namespace Tokenizer4GA.Shared.WebServices.RestServices
         public async Task<BaseResponse<Access>> LoginAsync(BaseRequest<Login> loginRequest)
         {
             var response = await PostAsync<Access, Login>($"{Server}Login", loginRequest);
-            //TODO Agregar a storage el id de usuario
+            
             return response;
         }
     }

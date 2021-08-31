@@ -68,7 +68,8 @@ namespace Tokenizer4GA.Shared.ViewModels.Certificate
             {
                 pathCertificate = await SaveBase64File(AppSettings.CertificateName,
                         Strings.XmlFileExtension,
-                        insuranceBase64.Base64);
+                        insuranceBase64.Base64,
+                        AppSettings.PathComplementCertificate);
                 Console.Out.WriteLine($"Ruta certificado::{pathCertificate}");
 
                 

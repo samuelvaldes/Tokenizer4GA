@@ -212,8 +212,8 @@ namespace Tokenizer4GA.Shared.ViewModels
         public virtual async Task<DocumentSetFile> SelectCertificate() =>
             await _platformFunctionality.SelectCertificateAsBase64Async();
 
-        public virtual async Task<string> SaveBase64File(string name, string extension, string base64File, bool overwriteFile = true) =>
-            await _platformFunctionality.SaveBase64FileAsync(name, extension, base64File, overwriteFile);
+        public virtual async Task<string> SaveBase64File(string name, string extension, string base64File, string pathComplement, bool overwriteFile = true) =>
+            await _platformFunctionality.SaveBase64FileAsync(name, extension, base64File, pathComplement, overwriteFile);
 
         public virtual async Task ShowEmbeddedWebsite(string title, string uri) =>
             await _platformFunctionality.ShowEmbeddedWebsiteAsync(title, uri);

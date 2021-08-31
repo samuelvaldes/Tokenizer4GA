@@ -38,7 +38,7 @@ namespace Tokenizer4GA.Shared.PlatformServices.Contracts
         Task<string> GetSecureDataAsync(string key, string defaultValue = null);
         Task SetSecureDataAsync(string key, string value);
         Task<DocumentSetFile> SelectCertificateAsBase64Async();
-        Task<string> SaveBase64FileAsync(string name, string extension, string base64File, bool overwriteFile = true);
+        Task<string> SaveBase64FileAsync(string name, string extension, string base64File, string pathComplement, bool overwriteFile = true);
         Task ShowEmbeddedWebsiteAsync(string title, string uri);
         string GetDevicePlatform();
         Task ShareUri(string uri, string title);

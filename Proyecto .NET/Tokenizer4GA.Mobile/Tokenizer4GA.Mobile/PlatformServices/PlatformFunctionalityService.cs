@@ -224,9 +224,17 @@ namespace Tokenizer4GA.Mobile.PlatformServices
 #endif
         }
 
-        public async Task<string> SaveBase64FileAsync(string name, string extension, string base64File, bool overwriteFile = true)
+        public async Task<string> SaveBase64FileAsync(string name, string extension, string base64File, string pathComplement, bool overwriteFile = true)
         {
-            var filepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), $"{name}.{extension}");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string filepath = Path.Combine(path, pathComplement);
+
+            if (!Directory.Exists(filepath))
+            {
+                Directory.CreateDirectory(filepath);
+            }
+
+            filepath = Path.Combine(filepath, $"{name}.{extension}");
             if (File.Exists(filepath) && overwriteFile)
                 File.Delete(filepath);
 

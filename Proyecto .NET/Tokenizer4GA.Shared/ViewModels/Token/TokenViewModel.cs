@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Input;
 using Tokenizer4GA.Shared.Services.Sqlite;
+using Message;
 
 namespace Tokenizer4GA.Shared.ViewModels.Token
 {
     public class TokenViewModel : PageViewModel
     {
-        private const int DEFAULT_INTERVAL_OTP = 30;
+        private const int DefaultIntervalOtp = 30;
         private readonly IProfileService _profile;
         private readonly IDeviceService _deviceService;
         private readonly Timer timer = new Timer(TimeSpan.FromSeconds(1).TotalMilliseconds); // se ejecutara cada segundo
@@ -138,7 +139,7 @@ namespace Tokenizer4GA.Shared.ViewModels.Token
             set { _isRefreshing = value; OnPropertyChanged(); }
         }
 
-        private int _remainingTime = DEFAULT_INTERVAL_OTP;
+        private int _remainingTime = DefaultIntervalOtp;
         public int RemainingTime
         {
             get => _remainingTime;
@@ -180,8 +181,20 @@ namespace Tokenizer4GA.Shared.ViewModels.Token
 
         private void ValidateCertificate()
         {
+            var encryptedMessage = new EncryptedMessage
+            {
+                SymmetricKeyEncryptedBase64 = "Me+hX8E1eam5Oej2w3Naa2dvO3teCN7ESAaRB96mSxp0y8+uqSywiehLlM1u+Kkwcw7rM4fzJaCeX/gLLeXIpFBTUgZyQT01TRDc8/aqyIIivzRQz2powUYdi0SeXoQKq1tuP+TGcc18vpU4wnGgR8H1k4ZWUQs8xSga8Bnb0mqzH1YaDkgcNCMeytpbdOs4hfhpRH7u/SMq0lTROdp4mj0xRukKkYkc4ksagSBVOQHav2kb78TbRRrYQ3/G4c1vs6fmofvVo8B9Lz7ZGc2qEUH3g0avxMi976mTSjv11fcRSdQ5W9l9bwKXb6zkNLTu/YHbyRmVVY+oqfrJ3gw5EA==",
+                InitializationVectorBase64 = "IVYCdBbALiVJdWmhkeRlYw==",
+                CipherTextBase64 = "hHhKp3yMNesa2vX+2up2yLH/kWkUjncG+yEOruk+ow1uFnVgmh5pTrqKBzqJ+qgZKPHb2p8XtZVhc7ZTC9kJSE5RxJP2wp4GZNz/5EV61t8=",
+                AsymmetricKeyId = Guid.Parse("011d6063-0f7d-41ee-a93f-6be779824388")
+            };
+            
             //TODO Implementar lógina para integrar proyecto MESSAGE
-            //var cryptoHelper = new CryptoHelper();
+            //var cryptoHelper = new CryptoHelper(null,
+                //encryptedMessage.SymmetricKeyEncryptedBase64);
+            
+            //(ISymmetricEncryptionService symmetricEncryptionService,
+            //    IXmlBasedAsymmetricEncryptionService xmlBasedAsymmetricEncryptionService)
         }
 
         public ICommand RefreshCommand { get; private set; }
